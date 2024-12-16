@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient( 45deg, yellow, orange) ;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+header h2{
+    font-size: 50px;
+    color: gray;
+    margin: 20px 0;
+}
+
+form{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+form .todo-input{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    font-size: 20px;
+}
+
+form div{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+ form .todo-button{
+    width: 70px;
+    height: 50px;
+    background-color: #ff6f47;
+    border: none;
+    font-size: 12px;
+    padding: 20px;
+    color: white;
+ }
+
+ form .todo-button:hover{
+   background-color: wheat;
+   color: black;
+
+}
+
+ form .todo-button:active, .delet:active, .check:active{
+  transform: scale(0.95);
+    
+}
+
+.todo{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    opacity: 1;
+    transition: all 0.1s ease;
+}
+
+.todoo{
+    opacity: 0;
+}
+
+.item{
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    color: gray;
+    background-color: white;
+    list-style: none;
+    pointer-events: none;
+}
+
+.check{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border: none;
+    font-size: 12px;
+    padding: 20px;
+}
+
+
+.delet{
+    width: 50px;
+    height: 50px;
+    background-color: orangered;
+    border: none;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.mark{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+     color: #ff6f47;
+     width: 12rem;
+     cursor: pointer;
+     padding: 1rem;
+    
+}
+
+
+.select{
+    margin: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after{
+    content: '\25bc';
+   position: absolute;
+   background-color: #ff6f47;
+   top: 0;
+   right: 0;
+   pointer-events: none;
+   padding: 1rem;
+   transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background-color: white;
+}
+
+.todo-list{
+    position: relative;
+}
+
+ .edit{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.edit p{
+    display: none;
+    color: green;
+    margin: 10px 0;
+    transition: all 0.4s ease;
+
+}
+
+.edit p.editq{
+    display: block;
+}
+.edit input{
+    
+    outline: none;
+    border: none;
+    transform: scale(0);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.edit input.recive{
+    transform: scale(1);
+    pointer-events: all;
+     height: 60px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.body-edit{
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+@media screen and (max-width:760px) {
+    form{
+        flex-direction: column;
+        
+    }
+
+}
+
+@media screen and (max-width:570px){
+    form .todo-input{
+      width: 300px;
+      height:40px ;
+      font-size: 16px;
+    }
+
+    form .todo-button{
+       height: 40px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+
+    .item{
+    width:  300px ;
+    height:40px ;
+    font-size: 16px;
+    }
+
+    .check{
+      height: 40px;
+      width: 40px;
+      font-size: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .delet{
+    height: 40px;
+    width: 40px;
+    font-size: 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    }
+
+    .edit input{
+        width: 300px;
+        height: 50px;
+    }
+} 
+
+@media screen  and (max-width:400px){
+    form .todo-input{
+        width: 250px;
+        height:40px ;
+        font-size: 16px;
+      }
+  
+      form .todo-button{
+         height: 40px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+  
+      .item{
+      width:  200px ;
+      height:40px ;
+      font-size: 16px;
+      }
+  
+      .check{
+        height: 30px;
+        width: 20px;
+        font-size: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .delet{
+      height: 30px;
+      width: 20px;
+      font-size: 8px;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      }
+  
+      .edit input{
+          width: 200px;
+          height: 40px;
+      }
+}
